@@ -84,11 +84,12 @@ class EditCaseModal(discord.ui.Modal, title="Edit Case"):
             label="Name", default=case[1], required=True, max_length=100
         )
         self.summary = discord.ui.TextInput(
-            label="Summary", default=case[2] or "", required=False, max_length=300
+            label="Summary", default=case[2] or "", 
+             style=discord.TextStyle.paragraph, max_length=4000
         )
         self.notes = discord.ui.TextInput(
             label="Notes", default=case[3] or "", required=False,
-            style=discord.TextStyle.paragraph, max_length=500
+            style=discord.TextStyle.paragraph, max_length=4000
         )
 
         self.add_item(self.name)
